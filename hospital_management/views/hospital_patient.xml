@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- hospital.patient tree view -->
+    <record id="hospital_patient_view_tree" model="ir.ui.view">
+        <field name="name">Patient List</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="patient_ID"/>
+                <field name="name"/>
+                <field name="patient_sex"/>
+                <field name="patient_age"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hospital.patient form view -->
+    <record id="hospital_patient_view_form" model="ir.ui.view">
+        <field name="name">Patient Form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="patient-info" string="Patient Information">
+                        <field name="name"/>
+                        <field name="patient_ID"/>
+                        <field name="patient_DoB"/>
+                        <field name="patient_age"/>
+                        <field name="patient_sex"/>
+                        <field name="patient_maritalStatus"/>
+                        <field name="patient_address"/>
+                    </group>
+                    <notebook>
+                        <page name="general-info" string="General Information">
+                            <group name="general1" string="Patient General Information">
+                                <field name="patient_bloodType"/>
+                                <field name="patient_Rh"/>
+                                <field name="patient_insurance"/>
+                            </group>
+                        </page>
+                        <page name="gisease" string="Disease">
+                            <group name="general2" string="Patient General Information">
+                                <field name="patient_disease"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- hospital.patient action window -->
+    <record id="hospital_patient_action" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hospital_patient_menu_act" 
+              name="Patient" 
+              parent="patient_menu_categ" 
+              action="hospital_patient_action" 
+              sequence="1"/>
+</odoo>

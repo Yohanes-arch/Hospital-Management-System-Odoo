@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- hospital.medicament tree view -->
+    <record id="hospital_medicament_view_tree" model="ir.ui.view">
+        <field name="name">Medicament List</field>
+        <field name="model">hospital.medicament</field>
+        <field name="arch" type="xml">
+            <tree>
+                <button name="%(hospital_management.incomingstock_wizzard_action)d" string="Incoming Stock" type="action" class="oe_highlight"/>
+                <field name="name"/>
+                <field name="currency_id" invisible='1'/>
+                <field name="medicament_price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="medicament_stock"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hospital.medicament form view -->
+    <record id="hospital_medicament_view_form" model="ir.ui.view">
+        <field name="name">Medicament Form</field>
+        <field name="model">hospital.medicament</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button name="%(hospital_management.incomingstock_wizzard_action)d" string="Incoming Stock" type="action" class="oe_highlight"/>
+                </header>
+
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="currency_id" invisible='0' force_save='1'/>
+                        <field name="medicament_price" widget="monetary" options="{'currency_field': 'currency_id'}" readonly="1" force_save="1"/>
+                        <field name="medicament_stock"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- hospital.medicament action window -->
+    <record id="hospital_medicament_action" model="ir.actions.act_window">
+        <field name="name">Medicaments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.medicament</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="medicament_menu_act" 
+              name="Medicaments" 
+              parent="pharmacy_menu_categ" 
+              action="hospital_medicament_action" 
+              sequence="1"/>
+</odoo>

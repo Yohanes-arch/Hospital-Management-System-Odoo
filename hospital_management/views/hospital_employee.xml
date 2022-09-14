@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_employee_view_id" model="ir.ui.view">
+        <field name="name">Employee Form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="employee_role"/>
+                <field name="is_doctor"/>
+            </xpath>
+
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='category_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='website']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.users action window -->
+    <record id="res_partner_employee_action" model="ir.actions.act_window">
+        <field name="name">Employee</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="Employee_menu_act" 
+              name="Employees" 
+              parent="employee_menu_categ" 
+              action="res_partner_employee_action" 
+              sequence="1"/>
+</odoo>

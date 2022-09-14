@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="print_patient" name="Patient">
+        <t t-call="web.html_container" >
+            
+            <t t-call="web.internal_layout">
+               <div class='page'>
+                    <h1 align-text="center"><b>Patient Information</b></h1>
+                    <br/>
+                    
+                
+                    <table style="width:100%; border:1px solid black;">
+                        <tr style="text-align: center; vertical-align: middle;">
+                            <th>Patient</th>
+                            <th>Patient ID</th>
+                            <th>DoB</th>
+                            <th>Age</th>
+                            <th>Sex</th>
+                            <th>Marital Status</th>
+                            <th>Address</th>
+                        </tr>
+
+                        <t t-foreach="docs" t-as="d">
+                            <tr>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='d.name'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='d.patient_ID'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='d.patient_DoB'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='d.patient_age'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='d.patient_sex'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='d.patient_maritalStatus'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='d.patient_address'/></div>
+                                </td>
+                            </tr>
+                        </t>
+                        <!-- <t t-foreach="d.presc_ids" t-as="ds">
+                            <tr>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.medicament_id.name'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_dose'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_doseUnit'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_form'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_frequency'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_treatmentDuration'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_treatmentPeriod'/></div>
+                                </td>
+                            </tr>
+                        </t> -->
+                    </table>
+                </div>
+
+                <div class="page2">
+                    <h1 align-text="center"><b>Patient Information</b></h1>
+                    <br/>
+
+                    <table style="width:100%; border:1px solid black;">
+                        <tr style="text-align: center; vertical-align: middle;">
+                            <th>Patient</th>
+                            <th>Patient ID</th>
+                            <th>DoB</th>
+                            <th>Age</th>
+                            <th>Sex</th>
+                            <th>Marital Status</th>
+                            <th>Address</th>
+                        </tr>
+                    </table>
+                </div>
+
+            </t>
+        </t>    
+    </template>
+</odoo>

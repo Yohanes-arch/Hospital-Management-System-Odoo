@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="report_hospital_prescription_xlsx" model="ir.actions.report">
+        <field name="name">Print Prescription Excel</field>
+        <field name="model">hospital.prescription</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">hospital.report_prescription_xlsx</field>
+        <field name="report_file">hospital.report_prescription_xlsx</field>
+        <field name="binding_model_id" ref="model_hospital_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- prescroption invoice -->
+    <record id="report_prescription_pdf_tmp" model="ir.actions.report">
+        <field name="name">Print Invoice</field>
+        <field name="model">hospital.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">hospital_management.report_prescription_pdf</field>
+        <field name="report_name">hospital_management.report_prescription_pdf</field>
+        <field name="binding_model_id" ref="model_hospital_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- prescription prescription -->
+    <record id="prescription" model="ir.actions.report">
+        <field name="name">Print Prescription</field>
+        <field name="model">hospital.prescription</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">hospital_management.print_prescription</field>
+        <field name="report_name">hospital_management.print_prescription</field>
+        <field name="binding_model_id" ref="model_hospital_prescription"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- patient info -->
+    <record id="patient" model="ir.actions.report">
+        <field name="name">Print Patient Info</field>
+        <field name="model">hospital.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">hospital_management.print_patient</field>
+        <field name="report_name">hospital_management.print_patient</field>
+        <field name="binding_model_id" ref="model_hospital_patient"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- invoice prescriptionreport wizzard info -->
+    <record id="invoice_prescriptionreport_wizzard_pdf" model="ir.actions.report">
+        <field name="name">Print Invoice</field>
+        <field name="model">hospital.prescriptionreport</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_file">hospital_management.print_prescriptionreport_wizzard</field>
+        <field name="report_name">hospital_management.print_prescriptionreport_wizzard</field>
+        <field name="binding_model_id" ref="model_hospital_prescriptionreport"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

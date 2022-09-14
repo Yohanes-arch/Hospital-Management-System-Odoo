@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="print_patient" name="Patient">
+        <t t-call="web.html_container" >
+            
+            <t t-call="web.internal_layout">
+               <div class='page'>
+                    <h1 align-text="center"><b>Patient Information</b></h1>
+                    <br/>
+                    
+                
+                    <caption>Patient Information</caption>
+                    <table class="table" style="width:100%;">
+                        <tbody>
+                            <t t-foreach="docs" t-as="d">
+                                <tr>
+                                    <th>Patient</th>
+                                    <td><span t-field='d.name'/></td>
+                                </tr>
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <td><span t-field='d.patient_ID'/></td>
+                                </tr>
+                                <tr>
+                                    <th>DoB</th>
+                                    <td><span t-field='d.patient_DoB'/></td>
+                                </tr>
+                                <tr>
+                                    <th>Age</th>
+                                    <td><span t-field='d.patient_age'/></td>
+                                </tr>
+                                <tr>
+                                    <th>Sex</th>
+                                    <td><span t-field='d.patient_sex'/></td>
+                                </tr>
+                                <tr>
+                                    <th>Marital Status</th>
+                                    <td><span t-field='d.patient_maritalStatus'/></td>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <td><span t-field='d.patient_address'/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <caption>Critical Information</caption>
+                    <table class="table" style="width:100%;">
+                        <tbody>
+                            <t t-foreach="docs" t-as="d">
+                                <tr>
+                                    <th>Blood Type</th>
+                                    <td><span t-field='d.patient_bloodType'/></td>
+                                </tr>
+                                <tr>
+                                    <th>Patient Rh</th>
+                                    <td><span t-field='d.patient_Rh'/></td>
+                                </tr>
+                                <tr>
+                                    <th>Insurance</th>
+                                    <td><span t-field='d.patient_insurance'/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <caption>Disease Information</caption>
+                    <table class="table" style="width:100%;">
+                        <tbody>
+                            <t t-foreach="docs" t-as="d">
+                                <tr>
+                                    <th>Disease</th>
+                                    <td><span t-field='d.patient_disease'/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>    
+    </template>
+</odoo>

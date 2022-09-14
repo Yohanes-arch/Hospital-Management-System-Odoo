@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="print_prescription" name="Prescription">
+        <t t-call="web.html_container" >
+            
+            <t t-call="web.internal_layout">
+               <div class='page'>
+                    <h1 align-text="center"><b>PRESCRIPTION</b></h1>
+                    <br/>
+                    <table name="presc_info" style="width:100%; border:1px solid black;">
+                        <tr style="text-align: center; vertical-align: middle;">
+                            <th>Patient Name</th>
+                            <th>Pharmacy</th>
+                            <th>Prescription Date</th>
+                            <th>Total</th>
+                        </tr>
+                        <t t-foreach='docs' t-as='d'>
+                            <tr style="text-align: center; vertical-align: middle; border:1px solid black;">
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div class='col-8'><span t-field='d.name.name'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div class='col-8'><span t-field='d.prescription_pharmacy'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div class='col-8'><span t-field='d.prescription_date'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div class='col-8'><span t-field='d.prescription_total'/></div>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+                    
+                <div class="page2">
+                    <table style="width:100%; border:1px solid black;">
+                        <tr style="text-align: center; vertical-align: middle;">
+                            <th>Medicaments</th>
+                            <th>Dose</th>
+                            <th>Dose Unit</th>
+                            <th>Form</th>
+                            <th>Frequency</th>
+                            <th>Treatment Duration</th>
+                            <th>Treatment Period</th>
+                        </tr>
+                        <t t-foreach="d.presc_ids" t-as="ds">
+                            <tr>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.medicament_id.name'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_dose'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_doseUnit'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_form'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_frequency'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_treatmentDuration'/></div>
+                                </td>
+                                <td style="border:1px solid black; text-align: center; vertical-align: middle;">
+                                    <div><span t-field='ds.presc_treatmentPeriod'/></div>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+                </div> 
+
+            </t>
+        </t>    
+    </template>
+</odoo>

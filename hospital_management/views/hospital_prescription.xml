@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- hospital.prescription tree view -->
+    <record id="hospital_prescription_view_tree" model="ir.ui.view">
+        <field name="name">Prescription List</field>
+        <field name="model">hospital.prescription</field>
+        <field name="arch" type="xml">
+            <tree      decoration-success="state == 'draft'"
+                       decoration-info="state == 'confirm'"
+                       decoration-muted="state == 'cancelled'">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="prescription_date"/>
+                <field name="prescription_pharmacy"/>
+                <field name="state"
+                       decoration-success="state == 'draft'"
+                       decoration-info="state == 'confirm'"
+                       decoration-muted="state == 'cancelled'"
+                       widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- hospital.prescription form view -->
+    <record id="model_name_view_form" model="ir.ui.view">
+        <field name="name">Prescription Form</field>
+        <field name="model">hospital.prescription</field>
+        <field name="arch" type="xml">
+            <form string="">
+            <header>
+                
+                <button name="action_confirm" string="Confirm" type="object" class="btn btn-primary" states="draft"/>
+                <button name="action_done" string="Done" type="object" class="btn btn-primary" states="confirm"/>
+                <button name="action_cancel" string="Cancel" type="object" class="btn btn-danger" states="confirm" confirm="Are you sure want to cancel?"/>
+                <button name="action_draft" string="Draft" type="object" class="btn btn-warning" states="cancelled" confirm="Are you sure want to edit?"/>
+                
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+            </header>
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="id_member" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="prescription_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="prescription_pharmacy" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="prescription_total" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    </group>
+                    <group name="presc-detail" string="Prescription Detail">
+                        <field name="presc_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                            <tree editable='bottom'>
+                                <field name="medicament_id"/>
+                                <field name="presc_dose"/>
+                                <field name="presc_doseUnit"/>
+                                <field name="presc_form"/>
+                                <field name="presc_frequency"/>
+                                <field name="presc_treatmentDuration"/>
+                                <field name="presc_treatmentPeriod"/>
+                                <field name="med_price"/>
+                                <field name="presc_qty"/>
+                                <field name="presc_total" sum="Total"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- hospital.prescription action window -->
+    <record id="hospital_prescription_action" model="ir.actions.act_window">
+        <field name="name">Prescription</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.prescription</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hospital_prescription_menu_act" 
+              name="Prescription" 
+              parent="patient_menu_categ" 
+              action="hospital_prescription_action" 
+              sequence="2"/>
+</odoo>

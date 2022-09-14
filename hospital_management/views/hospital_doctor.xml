@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- res.partner inherit search view -->
+    <record id="res_partner_doctor_view_id" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <field name="parent_id" position='after'>
+                <filter name="doctor" string="Doctor" domain="[('is_doctor', '=', 'True')]"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_doctors_action" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">
+            {
+                'search_default_doctor':1,
+                'default_is_doctor':True
+            }
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="doctor_menu_act" 
+              name="Doctors" 
+              parent="employee_menu_categ" 
+              action="res_partner_doctors_action" 
+              sequence="2"/>
+</odoo>

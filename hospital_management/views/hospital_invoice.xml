@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- hospital.invoice action window -->
+    <record id="hospital_invoice_action" model="ir.actions.act_window">
+        <field name="name">Invoice</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.invoice</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="invoice_menu_act" 
+              name="Invoices" 
+              parent="patient_menu_categ" 
+              action="hospital_invoice_action" 
+              sequence="3"/>
+</odoo>
