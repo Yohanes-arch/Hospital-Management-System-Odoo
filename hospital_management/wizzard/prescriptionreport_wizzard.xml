@@ -11,8 +11,8 @@
                     <field name="prescription_id"/>        
                 </group>
                 <footer>
-                    <button name="prescription_report" string="Print Invoice" type="object" class="oe_highlight"/>
-                    <button string="Cancel" special="cancel" class="oe_link"/>
+                    <button name="prescription_report" string="Print Invoice" type="object" class="btn btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn btn-danger"/>
                 </footer>
             </form>
         </field>
@@ -20,7 +20,7 @@
 
     <!-- prescriptionreport_wizzard action window -->
     <record id="prescriptionreport_wizzard_action" model="ir.actions.act_window">
-        <field name="name">prescriptionreport_wizzard.action</field>
+        <field name="name">Print Invoice</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.prescriptionreport</field>
         <field name="view_mode">form</field>

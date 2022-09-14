@@ -41,7 +41,7 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                        <field name="id_member" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <!-- <field name="id_member" attrs="{'readonly': [('state', '!=', 'draft')]}"/> -->
                         <field name="prescription_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         <field name="prescription_pharmacy" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         <field name="prescription_total" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
