@@ -24,10 +24,15 @@ Screenshots Preview
 
 
 <img src="preview/PatientList.png" width="640">
-<img src="preview/PatientForm.png">
-<img src="preview/PatientNew.png">
-<img src="preview/PrescriptionMenu.png">
-<img src="preview/PrescriptionList.png">
-<img src="preview/PrescriptionForm.png">
-<img src="preview/PrescriptionNew.png">
+<img src="preview/PatientForm.png" width="640">
+<img src="preview/PatientNew.png" width="640">
+<img src="preview/PrescriptionMenu.png" width="640">
+<img src="preview/PrescriptionList.png" width="640">
+<img src="preview/PrescriptionForm.png" width="640">
+<img src="preview/PrescriptionNew.png" width="640">
+
+
+### Prerequisites
+
+* [Odoo15](https://github.com/odoo/odoo)
 
