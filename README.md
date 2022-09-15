@@ -6,8 +6,8 @@ This is hospital management system module made by me using odoo. This module wil
 
 This repository contains the main module for hospital management system and the report module for printing report using with output `*xlsx`
 
-*`hospital_management`
-*`report_xlsx`
+* `hospital_management`
+* `report_xlsx`
 All the menus:
 
 1. Patient menu's
