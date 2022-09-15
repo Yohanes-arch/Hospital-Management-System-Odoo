@@ -20,4 +20,7 @@ All the menus:
 6. Invoice
 
 
-Screenshots
+Screenshots Preview
+
+
+<img src="">
