@@ -23,4 +23,11 @@ All the menus:
 Screenshots Preview
 
 
+<img src="preview/PatientList.png">
 <img src="preview/PatientForm.png">
+<img src="preview/PatientNew.png">
+<img src="preview/PrescriptionMenu.png">
+<img src="preview/PrescriptionList.png">
+<img src="preview/PrescriptionForm.png">
+<img src="preview/PrescriptionNew.png">
+
