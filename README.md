@@ -23,4 +23,4 @@ All the menus:
 Screenshots Preview
 
 
-<img src="">
+<img src="preview/PatientForm.png">
