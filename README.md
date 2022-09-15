@@ -23,7 +23,7 @@ All the menus:
 Screenshots Preview
 
 
-<img src="preview/PatientList.png">
+<img src="preview/PatientList.png" width="640">
 <img src="preview/PatientForm.png">
 <img src="preview/PatientNew.png">
 <img src="preview/PrescriptionMenu.png">
